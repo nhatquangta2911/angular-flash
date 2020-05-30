@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-flash"
+    }
+  },
+  "defaultProject": "angular-flash",
+  "cli": {
+    "analytics": "17428a76-0245-469a-a5c5-773e8072eb6f"
+  }
 }
