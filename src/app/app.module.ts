@@ -1,20 +1,15 @@
+import { HomeComponent } from './pages/home/home.component';
+import { BookModule } from './pages/book/book.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
-
+import { HomeModule } from './pages/home/home.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HomeModule, BookModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
