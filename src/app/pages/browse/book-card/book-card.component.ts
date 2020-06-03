@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Book } from 'src/app/types';
-import { EventEmitter } from 'protractor';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-book-card',
@@ -9,10 +9,15 @@ import { EventEmitter } from 'protractor';
 })
 export class BookCardComponent implements OnInit {
   @Input() book: Book;
+  @Output() latestViewedBook = new EventEmitter<string>();
   author: string;
   constructor() {}
 
   ngOnInit() {
     this.author = this.book.authors[0];
   }
+
+  sendLatestViewedBook = (bookTitle: string) => {
+    this.latestViewedBook.emit(bookTitle);
+  };
 }
