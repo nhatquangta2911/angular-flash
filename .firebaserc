@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "book-flash": {
+      "hosting": {
+        "angular-flash": [
+          "book-flash"
+        ]
+      }
+    }
+  }
+}

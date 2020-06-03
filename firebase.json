@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "angular-flash",
+      "public": "dist/angular-flash",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
