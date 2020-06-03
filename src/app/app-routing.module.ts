@@ -1,3 +1,4 @@
+import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { BookComponent } from './pages/book/book.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'books/:id', component: BookComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'shipping', component: ShippingComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
