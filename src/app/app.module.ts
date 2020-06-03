@@ -1,3 +1,4 @@
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HomeModule,
     BookModule,

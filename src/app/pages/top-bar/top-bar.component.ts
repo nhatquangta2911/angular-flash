@@ -6,13 +6,15 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
 })
-export class TopBarComponent implements OnInit, OnChanges {
+export class TopBarComponent implements OnInit {
   total: number;
   constructor(private cartService: CartService) {}
-  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
+
+  ngOnInit() {
     this.total = this.cartService.calculateTotal();
   }
-  ngOnInit() {
+
+  ngDoCheck() {
     this.total = this.cartService.calculateTotal();
   }
 }
