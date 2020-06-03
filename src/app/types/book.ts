@@ -4,6 +4,7 @@ interface Book {
   authors: string[];
   price: number;
   tags: string[];
+  coverImage: string;
 }
 
 export default Book;

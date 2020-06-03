@@ -1,3 +1,5 @@
+import { BookCardComponent } from './pages/browse/book-card/book-card.component';
+import { BrowseComponent } from './pages/browse/browse.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -16,6 +18,8 @@ import { HomeComponent } from './pages/home/home.component';
     TopBarComponent,
     CartComponent,
     ShippingComponent,
+    BrowseComponent,
+    BookCardComponent,
   ],
   imports: [
     BrowserModule,

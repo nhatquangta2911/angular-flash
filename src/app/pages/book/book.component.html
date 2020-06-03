@@ -4,7 +4,7 @@
     <h3>{{ book.title }}</h3>
     <p *ngFor="let author of book.authors">Author: {{ author }}</p>
     <p class="text-info">
-      Price: <strong>${{ book.price }}</strong>
+      Price: <strong>{{ book.price | currency }}</strong>
     </p>
     <ul>
       <li *ngFor="let tag of book.tags">{{ tag }}</li>

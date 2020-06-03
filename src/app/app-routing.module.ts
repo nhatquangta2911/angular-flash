@@ -1,3 +1,4 @@
+import { BrowseComponent } from './pages/browse/browse.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { BookComponent } from './pages/book/book.component';
@@ -8,6 +9,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'books', component: BrowseComponent },
   { path: 'books/:id', component: BookComponent },
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent },
