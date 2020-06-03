@@ -14,10 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-      this.bookTitles = bookTitles;
-    }, 1500);
+    this.isLoading = false;
+    this.bookTitles = bookTitles;
   }
 }

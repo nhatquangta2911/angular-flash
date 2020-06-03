@@ -1,8 +1,4 @@
-<div class="container-fluid">
-  <div class="jumbotron text-center">
-    <h1>Home Page</h1>
-  </div>
-  <div *ngIf="isLoading">loading...</div>
+<div class="container">
   <h3>List of books</h3>
   <div *ngFor="let bookTitle of bookTitles; index as id">
     <a [routerLink]="['books', bookTitle.id]">{{ bookTitle.title }}</a>
