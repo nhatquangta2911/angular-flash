@@ -21,7 +21,7 @@ export const books: Book[] = [
   },
   {
     id: 1003,
-    title: 'The Subtle Art',
+    title: 'The Subtle Art Of Not Giving A F*ck',
     authors: ['Mark Manson'],
     price: 13.45,
     coverImage: 'https://cf.shopee.vn/file/78a7925bb892cb26ab4793a4f705d258',
@@ -53,6 +53,15 @@ export const books: Book[] = [
     coverImage:
       'https://images-na.ssl-images-amazon.com/images/I/41LG3kKouOL._SX324_BO1,204,203,200_.jpg',
     tags: ['lifestyle', 'self-help', 'motivation'],
+  },
+  {
+    id: 1007,
+    title: 'Lá Nằm Trong Lá',
+    authors: ['Nguyễn Nhật Ánh'],
+    price: 3.87,
+    coverImage:
+      'https://gacsach.com/sites/gacsach.com/files/styles/book310/public/la-nam-trong-la.jpg?itok=E_rcfgYs',
+    tags: ['novel', 'childhood', 'student', 'friends'],
   },
 ];
 

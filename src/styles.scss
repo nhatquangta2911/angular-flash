@@ -6,7 +6,13 @@
 }
 
 .fit-image {
-  max-width: 15vw;
+  max-width: 20vw;
   object-fit: cover;
   height: 30vh;
+}
+
+.fit-image-details {
+  max-width: 25vw;
+  object-fit: cover;
+  height: 50vh;
 }

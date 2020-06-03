@@ -1,16 +1,19 @@
 <div class="container">
   <div *ngIf="!book">Not Found</div>
-  <div *ngIf="book">
-    <h3>{{ book.title }}</h3>
-    <p *ngFor="let author of book.authors">Author: {{ author }}</p>
-    <p class="text-info">
-      Price: <strong>{{ book.price | currency }}</strong>
-    </p>
-    <ul>
-      <li *ngFor="let tag of book.tags">{{ tag }}</li>
-    </ul>
-    <button (click)="addToCart(book)" type="button" class="btn btn-primary">
-      Buy
-    </button>
+  <div *ngIf="book" class="d-flex justify-content-start w-75">
+    <img [src]="book.coverImage" alt="book.title" class="fit-image-details mr-5" />
+    <div>
+      <h3 class="text-truncate">{{ book.title }}</h3>
+      <p *ngFor="let author of book.authors">Author: {{ author }}</p>
+      <p class="text-primary">
+        Price: <strong>{{ book.price | currency }}</strong>
+      </p>
+      <ul>
+        <li *ngFor="let tag of book.tags">{{ tag }}</li>
+      </ul>
+      <button (click)="addToCart(book)" type="button" class="btn btn-outline-primary btn-sm mt-3">
+        Add to Cart
+      </button>
+    </div>
   </div>
 </div>

@@ -1,20 +1,20 @@
-<div class="card mx-2 my-2">
+<div class="card mx-3 my-2" style="width: 18vw;">
   <img
     [src]="book.coverImage"
-    alt="Become Steve Jobs"
+    alt="book.title"
     class="card-img-top fit-image"
   />
-  <div class="card-body d-flex flex-column">
-    <h5 class="card-title">{{ book.title }}</h5>
-    <div class="d-flex justify-content-between align-items-center">
-      <p class="card-text text-secondary">{{ author }}</p>
+  <div class="card-body d-flex flex-column" >
+    <h5 class="card-title text-truncate">{{ book.title }}</h5>
+    <div class="d-flex justify-content-between align-align-items-start">
+      <p class="card-text text-secondary text-truncate">{{ author }}</p>
       <p class="card-text text-primary">
         {{ book.price | currency }}
       </p>
     </div>
     <a
       [routerLink]="['/books', book.id]"
-      class="btn btn-outline-primary btn-sm w-50"
+      class="btn btn-outline-primary btn-sm w-50 text-truncate"
       >Details</a
     >
   </div>
