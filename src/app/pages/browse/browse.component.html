@@ -24,7 +24,9 @@
       </app-book-card>
     </div>
   </div>
-  <ng-template #modalContent let-c="close" let-d="dismiss">
-    <app-modal></app-modal>
+  <ng-template #modalContent>
+    <app-modal title="Latest Book">
+      <p>{{ latestViewedBook }}</p>
+    </app-modal>
   </ng-template>
 </div>

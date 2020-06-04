@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/services';
 import { ModalService } from './../../services/modal.service';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Book } from 'src/app/types';

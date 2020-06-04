@@ -1,6 +1,7 @@
+import { ModalService } from './../../services/modal.service';
 import { CartService } from 'src/app/services';
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/types';
+import { Book, Delivery } from 'src/app/types';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -12,14 +13,17 @@ export class CartComponent implements OnInit {
   items: Book[];
   total: number = 0;
   checkoutForm: FormGroup;
+  deliveryInfo: Delivery;
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modalService: ModalService
   ) {
     this.checkoutForm = this.formBuilder.group({
       name: '',
       address: '',
+      phoneNumber: '',
     });
   }
 
@@ -28,10 +32,15 @@ export class CartComponent implements OnInit {
     this.total = this.cartService.calculateTotal();
   }
 
-  onSubmit(user) {
+  onSubmit(content, deliveryInfo) {
     this.items = this.cartService.clearCart();
     this.total = 0;
     this.checkoutForm.reset();
-    alert(JSON.stringify(user, null, 2));
+    this.deliveryInfo = deliveryInfo;
+    this.modalService.open(content);
+  }
+
+  triggerShippingFeeModal(content) {
+    this.modalService.open(content);
   }
 }
