@@ -1,3 +1,4 @@
+import { ModalComponent } from './shared/modal/modal.component';
 import { BrowseComponent } from './pages/browse/browse.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'books/:id', component: BookComponent },
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent },
+  { path: 'demo', component: ModalComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

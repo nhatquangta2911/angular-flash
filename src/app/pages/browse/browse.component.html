@@ -1,10 +1,30 @@
 <div class="container">
-  <p class="text-left">Latest View: <span class="text-primary">{{latestViewedBook}}</span></p>
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="text-left">
+      Latest View: <span class="text-primary">{{ latestViewedBook }}</span>
+    </p>
+    <button
+      type="button"
+      class="btn btn-outline-primary btn-sm"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      (click)="triggerModal(modalContent)"
+    >
+      Trigger Modal
+    </button>
+  </div>
   <h3 class="mb-3">Browse books</h3>
   <div class="d-flex justify-content-center">
-    <div class="w-100 d-flex flex-wrap h-100 align-items-stretch ">
-      <app-book-card *ngFor="let book of books" [book]="book" (latestViewedBook)="onView($event)">
+    <div class="w-100 d-flex flex-wrap h-100 align-items-stretch">
+      <app-book-card
+        *ngFor="let book of books"
+        [book]="book"
+        (latestViewedBook)="onView($event)"
+      >
       </app-book-card>
     </div>
   </div>
+  <ng-template #modalContent let-c="close" let-d="dismiss">
+    <app-modal></app-modal>
+  </ng-template>
 </div>

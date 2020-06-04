@@ -1,3 +1,4 @@
+import { ModalService } from './../../services/modal.service';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Book } from 'src/app/types';
 import { books } from '../book/book.sampleData';
@@ -10,7 +11,8 @@ import { books } from '../book/book.sampleData';
 export class BrowseComponent implements OnInit {
   books: Book[] = [];
   latestViewedBook: string = '';
-  constructor() {}
+  showModal: boolean = false;
+  constructor(private modalService: ModalService) {}
 
   ngOnInit() {
     this.books = books;
@@ -22,4 +24,8 @@ export class BrowseComponent implements OnInit {
   onView = (booktitle: string): void => {
     this.latestViewedBook = booktitle;
   };
+
+  triggerModal(content) {
+    this.modalService.open(content);
+  }
 }
