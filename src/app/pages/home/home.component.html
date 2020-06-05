@@ -29,9 +29,12 @@
           card.vietnameseTitle
         }}</span>
       </div>
-      <div class="text-center" *ngIf="isLoading && !cards">
+      <div class="text-center" *ngIf="isLoading && !cards && !error">
         <div class="spinner-border mb-2" role="status"></div>
         <p>Loading</p>
+      </div>
+      <div class="text-danger" *ngIf="error">
+        Some thing went wrong, please try again
       </div>
     </app-modal>
   </ng-template>

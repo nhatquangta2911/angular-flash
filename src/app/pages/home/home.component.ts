@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  isLoading = false;
+  isLoading: boolean = false;
   bookTitles = [];
-  error = null;
+  error: boolean = false;
   cards;
 
   constructor(
@@ -29,9 +29,14 @@ export class HomeComponent implements OnInit {
   onFetchCards(content) {
     this.isLoading = true;
     this.modalService.open(content);
-    this.genericService.fetchCards().subscribe((cards) => {
-      this.isLoading = false;
-      this.cards = cards;
-    });
+    this.genericService.fetchCards().subscribe(
+      (cards) => {
+        this.isLoading = false;
+        this.cards = cards;
+      },
+      (error) => {
+        this.error = true;
+      }
+    );
   }
 }
