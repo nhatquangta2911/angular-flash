@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeModule } from './pages/home/home.module';
 import { BookModule } from './pages/book/book.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './pages/top-bar/top-bar.component';
@@ -21,15 +20,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CartComponent,
     ShippingComponent,
     BrowseComponent,
-    BookCardComponent,
     ModalComponent,
+    BookCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HomeModule,
     BookModule,
     AppRoutingModule,
     NgbModule,
@@ -37,4 +36,4 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

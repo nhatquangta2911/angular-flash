@@ -1,4 +1,3 @@
-import { ModalService } from './../../services/modal.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,5 +23,5 @@ export class ModalComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
