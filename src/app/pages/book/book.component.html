@@ -24,4 +24,12 @@
       </button>
     </div>
   </div>
+  <div class="mt-5">
+    <h4>More book</h4>
+    <div class="d-flex flex-column">
+      <div *ngFor="let book of (books | async).books; index as id">
+        <a [routerLink]="['/books', book.id]">{{ book.title }}</a>
+      </div>
+    </div>
+  </div>
 </div>

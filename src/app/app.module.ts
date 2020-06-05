@@ -1,7 +1,9 @@
+import { bookReducer } from './pages/book/book.reducer';
 import { ModalComponent } from './shared/modal/modal.component';
 import { BookCardComponent } from './pages/browse/book-card/book-card.component';
 import { BrowseComponent } from './pages/browse/browse.component';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowseComponent,
     ModalComponent,
     BookCardComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,10 +32,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     BookModule,
+    StoreModule.forRoot({ book: bookReducer }),
     AppRoutingModule,
     NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
