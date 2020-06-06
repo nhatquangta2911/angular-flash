@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs';
 import { CartService } from 'src/app/services';
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Cart } from 'src/app/types';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,9 +11,15 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
   total: number;
-  constructor(private cartService: CartService) {}
+  displayDialog;
+  cart: Observable<Cart>;
+  constructor(
+    private cartService: CartService,
+    private cartStore: Store<{ cart: Cart }>
+  ) {}
 
   ngOnInit() {
+    this.cart = this.cartStore.select('cart');
     this.total = this.cartService.calculateTotal();
   }
 

@@ -1,7 +1,8 @@
+import { ADD_ITEM_INTO_CART } from './../cart/cart.actions';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Book } from 'src/app/types';
+import { Book, Cart } from 'src/app/types';
 import { books } from './book.sampleData';
 import { CartService } from 'src/app/services';
 import { Observable } from 'rxjs';
@@ -21,11 +22,13 @@ export class BookComponent implements OnInit {
     private route: ActivatedRoute,
     private cartService: CartService,
     private router: Router,
-    private store: Store<{ book: { books: Book[] } }>
+    private store: Store<{ book: { books: Book[] } }>,
+    private cartStore: Store<{ cart: Cart }>
   ) {}
 
   addToCart = (book: Book) => {
     this.cartService.addToCart(book);
+    this.cartStore.dispatch({ type: ADD_ITEM_INTO_CART, book: book });
     this.router.navigate(['/cart']);
   };
 

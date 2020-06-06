@@ -1,8 +1,11 @@
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalService } from './../../services/modal.service';
 import { GenericService } from './../../services/generic.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { bookTitles } from '../book/book.sampleData';
-import { Router } from '@angular/router';
+import { Cart } from 'src/app/types';
 
 @Component({
   selector: 'app-home',
@@ -14,16 +17,19 @@ export class HomeComponent implements OnInit {
   bookTitles = [];
   error: boolean = false;
   cards;
+  cart: Observable<Cart>;
 
   constructor(
     private router: Router,
     private modalService: ModalService,
-    private genericService: GenericService
+    private genericService: GenericService,
+    private store: Store<{ cart: Cart }>
   ) {}
 
   ngOnInit() {
     this.isLoading = false;
     this.bookTitles = bookTitles;
+    this.cart = this.store.select('cart');
   }
 
   onFetchCards(content) {

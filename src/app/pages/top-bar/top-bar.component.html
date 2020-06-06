@@ -1,17 +1,8 @@
 <div class="container mb-3">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand mr-4 text-primary font-weight-bold" routerLink="/"
-      >BookFlash</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <a class="navbar-brand mr-4 text-primary font-weight-bold" routerLink="/">BookFlash</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -28,6 +19,9 @@
         <span class="text-secondary font-weight-bold mr-2">{{
           total | currency
         }}</span>
+        <span class="text-secondary font-weight-bold mr-2">
+          ({{ (cart | async).addedBooks.length }})
+        </span>
         <a routerLink="/cart" class="btn btn-primary btn-sm my-2 my-sm-0">
           Checkout
         </a>

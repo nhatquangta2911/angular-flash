@@ -1,3 +1,4 @@
+import { cartReducer } from './pages/cart/cart.reducer';
 import { bookReducer } from './pages/book/book.reducer';
 import { ModalComponent } from './shared/modal/modal.component';
 import { BookCardComponent } from './pages/browse/book-card/book-card.component';
@@ -34,7 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     BookModule,
-    StoreModule.forRoot({ book: bookReducer }),
+    StoreModule.forRoot({ book: bookReducer, cart: cartReducer }),
     AppRoutingModule,
     NgbModule,
   ],
